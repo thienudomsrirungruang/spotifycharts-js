@@ -18,7 +18,18 @@ module.exports.addSongIfNotExists = (song) => {
             log.debug(`New song added: ${song.spotifyId}`);
         }
         else{
-            log.debug(`${song.spotifyId} already exists, skipping`)
+            log.debug(`${song.spotifyId} already exists, skipping`);
         }
     })
+};
+
+module.exports.addSongObjToCharts = (chart, song) => {
+    this.addSongIfNotExists(song);
+    chart.songId = song.spotifyId;
+    chart.save((err) => {
+        if(err){
+            log.error(err);
+            return;
+        }
+    });
 }
