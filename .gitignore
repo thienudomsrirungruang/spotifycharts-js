@@ -16,8 +16,8 @@ tmp
 
 .env
 
-.nyc/
-.nyc_output/
+.nyc
+.nyc_output
 
 node_modules
 bower_components
