@@ -1,0 +1,31 @@
+{
+  "name": "spotifycharts",
+  "version": "1.0.0",
+  "description": "Spotify charts visualizer",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.3.4",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "loglevel": "^1.7.1",
+    "loglevel-plugin-prefix": "^0.8.4",
+    "mongoose": "^5.12.4",
+    "node-schedule": "^2.0.0",
+    "pug": "^3.0.2",
+    "sinon": "^10.0.0",
+    "sinon-mongoose": "^2.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Thien Udomsrirungruang",
+  "license": "ISC"
+}
