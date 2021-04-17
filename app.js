@@ -3,6 +3,8 @@ const errorHandler = require("errorhandler");
 const chalk = require("chalk");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const CronJob = require("cron").CronJob;
+const updateCharts = require("./service/update_charts");
 
 // logging
 var log = require("loglevel");
@@ -65,6 +67,9 @@ app.get("/", homeController.index);
 app.listen(app.get("port"), () => {
     log.info("App is running at http://localhost:%d in %s mode", app.get("port"), app.get("env"));
 })
+
+// cron
+const job = new CronJob(process.env.UPDATE_CHARTS_CRON,  updateCharts.updateCharts, null, true);
 
 module.exports = app;
 
